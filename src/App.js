@@ -8,7 +8,10 @@ import SplashPage from './sections/SplashScreen';
 
 
 
+
+
 function App() {
+
   return (
    <>
    <SplashPage />
@@ -19,6 +22,7 @@ function App() {
   <InterestOptionPage />
   </>
   );
+
 }
 
 export default App;
