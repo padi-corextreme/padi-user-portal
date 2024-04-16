@@ -1,5 +1,8 @@
 
 import './App.css';
+import ProductCard from './components/ProductDetail-card/ProductDetail-card';
+
+
 import InterestOptionPage from './sections/InterestOptions';
 import OnboardingPage from './sections/Onboarding';
 import LoginPage from './sections/SignIn';
@@ -20,6 +23,8 @@ function App() {
   
   <OnboardingPage />
   <InterestOptionPage />
+  <ProductCard/>
+ 
   </>
   );
 
