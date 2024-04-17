@@ -1,5 +1,6 @@
 
 import './App.css';
+
 import HomePage from './pages/home/homePage';
 import InterestCategory from './sections/InterestCategory';
 import OnboardingPage from './sections/Onboarding';
@@ -8,6 +9,7 @@ import SplashScreen from './sections/SplashScreen';
 import AllCategoriesCard from './sections/homesections/AllCategories';
 import BestDealsCard from './sections/homesections/BestDeal';
 import DiscountCard from './sections/homesections/Discount';
+
 
 import LoginPage from './sections/loginPage';
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -31,6 +33,7 @@ function App() {
 
   return (
    <>
+
    <SplashScreen />
    <OnboardingPage/>
    <SignUpPage />
@@ -40,6 +43,7 @@ function App() {
    <BestDealsCard />
    <DiscountCard />
    <HomePage />
+
   
   </>
   );
