@@ -22,7 +22,7 @@ const LoginPage = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-4">
-      <h2 className="text-2xl font-bold mb-4">Login</h2>
+      <h2 className="text-center text-2xl font-bold mb-4">Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-1">Email</label>

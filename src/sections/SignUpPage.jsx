@@ -23,7 +23,7 @@ const SignUpPage = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-4">
-      <h1 className="text-3xl font-bold mb-4">Sign Up</h1>
+      <h1 className="text-center text-3xl font-bold mb-4">Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
