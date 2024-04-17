@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+
 import './App.css';
+import HomePage from './pages/home/homePage';
+import InterestCategory from './sections/InterestCategory';
+import OnboardingPage from './sections/Onboarding';
+import SignUpPage from './sections/SignUpPage';
+import SplashScreen from './sections/SplashScreen';
+import AllCategoriesCard from './sections/homesections/AllCategories';
+import BestDealsCard from './sections/homesections/BestDeal';
+import DiscountCard from './sections/homesections/Discount';
+
+import LoginPage from './sections/loginPage';
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import InterestOptionPage from './sections/InterestOptions';
+// import OnboardingPage from './sections/Onboarding';
+// import SignUpPage from './sections/SignUpPage';
+// import LoginPage from './sections/loginPage';
+// import SplashScreen from './sections/SplashScreen';
+
+// const router = createBrowserRouter([
+//   { path: "/", element: <SplashScreen /> },
+//   { path: "/signup", element: <SignUpPage/> },
+//   { path: "/login", element: <LoginPage /> },
+//   { path: "/onboarding", element: <OnboardingPage/> },
+//   { path: "/interestoptions", element: <InterestOptionPage/> },
+// ]);
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <SplashScreen />
+   <OnboardingPage/>
+   <SignUpPage />
+   <LoginPage />
+   <InterestCategory />
+   <AllCategoriesCard />
+   <BestDealsCard />
+   <DiscountCard />
+   <HomePage />
+  
+  </>
   );
+
 }
 
 export default App;
