@@ -3,6 +3,7 @@ import Image1 from "../assets/images/Illustration.png";
 import Image2 from "../assets/images/Illustration 2.png";
 import Image3 from "../assets/images/illustration 3.png";
 
+
 const OnboardingPage = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const images = [Image1, Image2, Image3];
@@ -32,9 +33,11 @@ const OnboardingPage = () => {
           Next
         </button>
       ) : (
+        
         <button onClick={handleRegister} className=" bg-orange-500 text-white font-bold py-2 px-4 rounded">
           Register
         </button>
+       
       )}
     </div>
   );
