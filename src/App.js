@@ -5,6 +5,7 @@ import OnboardingPage from './sections/Onboarding';
 import LoginPage from './sections/SignIn';
 import SignUpPage from './sections/SignUpPage';
 import SplashPage from './sections/SplashScreen';
+import { UserContextProvider } from './services/userContext';
 
 
 
@@ -14,12 +15,14 @@ function App() {
 
   return (
    <>
+    <UserContextProvider>
    <SplashPage />
   <SignUpPage />
   <LoginPage />
   
   <OnboardingPage />
   <InterestOptionPage />
+  </UserContextProvider>
   </>
   );
 
