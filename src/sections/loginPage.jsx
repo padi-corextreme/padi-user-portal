@@ -36,7 +36,7 @@ const LoginPage = () => {
           />
         </div>
         <div>
-          <label className="block mb-1">Password</label>
+          <label className="block mb-1">Telephone</label>
           <input
             type="password"
             name="password"

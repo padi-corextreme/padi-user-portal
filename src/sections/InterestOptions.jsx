@@ -75,7 +75,13 @@ const InterestOptionPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <>
+<h2 className="text-2xl font-semibold text-center mb-6">Let's be more specific!</h2>
+      <div className="flex flex-row overflow-x-auto space-x-4"></div>
+      <h4 className="text-2xl font-semibold text-center mb-6">We have some recommended options for your chosen interests</h4>
+      <div className="flex flex-row overflow-x-auto space-x-4"></div>
+
+<div className="container mx-auto p-4">
       {categories.map((category, index) => (
         <div key={index} className="mb-6">
           <h2 className="text-lg font-semibold mb-2">{category.name}</h2>
@@ -104,6 +110,7 @@ const InterestOptionPage = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

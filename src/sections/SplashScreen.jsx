@@ -9,12 +9,12 @@ const SplashScreen = () => {
       setShowLogo(true);
     }, 3000); // Change 3000 to the number of milliseconds you want to delay
 
-    // // Navigate to the onboarding page after showing the logo
-    // if (showLogo) {
-    //   setTimeout(() => {
-    //     window.location.href = "/onboarding";
-    //   }, 2000); // Change 2000 to the number of milliseconds you want to wait before navigation
-    // }
+    // Navigate to the onboarding page after showing the logo
+    if (showLogo) {
+      setTimeout(() => {
+        window.location.href = "/onboarding";
+      }, 2000); // Change 2000 to the number of milliseconds you want to wait before navigation
+    }
 
     return () => clearTimeout(timer);
   }, [showLogo]);
