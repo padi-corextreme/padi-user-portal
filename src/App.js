@@ -7,6 +7,7 @@ import SignUpPage from './sections/SignUpPage';
 import LoginPage from './sections/loginPage';
 import SplashScreen from './sections/SplashScreen';
 import HomePage from './pages/home/HomePage';
+import ProfilePage from './pages/profile/profile';
 
 const router = createBrowserRouter([
   { path: "/", element: <SplashScreen /> },
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
   { path: "/onboarding", element: <OnboardingPage/> },
   { path: "/interestoptions", element: <InterestOptionPage/> },
-  { path: "/Home", element: <HomePage /> }
+  { path: "/Home", element: <HomePage /> },
+  { path: "/profile", element: <ProfilePage /> }
 
 ]);
 
