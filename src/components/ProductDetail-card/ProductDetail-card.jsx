@@ -1,5 +1,6 @@
 import React from 'react';
-import image from '../../assets/images/image 2.png'
+
+
 
 const BUTTON_CLASS = "text-zinc-600 dark:text-zinc-400";
 const TEXT_CLASS = "text-zinc-800 dark:text-white";
@@ -21,7 +22,9 @@ const ProductCard = () => {
           </svg>
         </button>
       </div>
+
       <img className="w-full" src={image} alt="Product Image" />
+
       <div className="px-4 py-4">
         <h2 className={`font-bold text-xl mb-2 ${TEXT_CLASS}`}>HP Elite Book</h2>
         <p className={`text-zinc-700 dark:text-zinc-300 text-base mb-4`}>

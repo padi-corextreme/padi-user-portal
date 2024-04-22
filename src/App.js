@@ -1,5 +1,8 @@
 
 import './App.css';
+
+
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import InterestOptionPage from './sections/InterestOptions';
 import OnboardingPage from './sections/Onboarding';
@@ -18,6 +21,7 @@ const router = createBrowserRouter([
   { path: "/Home", element: <HomePage /> },
   { path: "/profile", element: <ProfilePage /> }
 
+
 ]);
 
 
@@ -25,13 +29,16 @@ const router = createBrowserRouter([
 function App() {
 
   return (
+
    <>
 <RouterProvider
 router={router}
 />
    
   
-  </>
+
+  
+  
   );
 
 }
