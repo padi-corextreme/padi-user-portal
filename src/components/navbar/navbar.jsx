@@ -14,7 +14,7 @@ const Navbar = () => {
           <li>
             
             <img src={homeIcon} alt="Home Icon" />
-            <span>Accueil</span>
+            <span>Home</span>
           </li>
           <li>
             <img src={wishlistIcon} alt="Wishlist Icon" />
@@ -22,11 +22,11 @@ const Navbar = () => {
           </li>
           <li>
             <img src={interestIcon} alt="Interest Icon" />
-            <span>Intérêts</span>
+            <span>Interest</span>
           </li>
           <li>
             <img src={profileIcon} alt="Profile Icon" />
-            <span>Profil</span>
+            <span>Profile</span>
           </li>
         </ul>
       </div>

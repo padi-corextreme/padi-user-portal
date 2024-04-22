@@ -1,18 +1,16 @@
 
 import React from 'react';
 import Navbar from '../../components/navbar/navbar';
+import AllCategoriesCard from '../../sections/homesections/AllCategories';
+import BestDealsCard from '../../sections/homesections/BestDeal';
+import DiscountCard from '../../sections/homesections/Discount';
 
 // Shared Tailwind CSS class strings
 const titleClass = 'text-lg font-semibold text-zinc-700 dark:text-zinc-300';
 const gridClass = 'flex grid-cols-2 gap-4 mt-2';
-const cardClass = 'bg-white dark:bg-zinc-700 p-2 rounded-lg';
 
-// Smaller components to avoid repetition
-const ImageCard = ({ src, alt }) => (
-  <div className={cardClass}>
-    <img src={src} alt={alt} className="rounded-lg" />
-  </div>
-);
+
+
 
 const Section = ({ title, children }) => (
   <div className="mt-4">
@@ -33,7 +31,7 @@ const HomePage = () => {
           Hello, <span>{username}</span>
         </h1>
         
-        <Section title="Choisir par point de vente">
+        <Section title="Point of Sale">
           <div className="flex mt-2 space-x-2 overflow-x-auto">
             <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
             <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
@@ -43,37 +41,27 @@ const HomePage = () => {
           </div>
         </Section>
 
-        <Section title="Meilleurs Deals pour vous !">
+        <Section title="Best deals">
           <div className={gridClass}>
-            <ImageCard src="https://placehold.co/160x160" alt="Deal" />
-            <ImageCard src="https://placehold.co/160x160" alt="Deal" />
-            <ImageCard src="https://placehold.co/160x160" alt="Deal" />
+            <BestDealsCard />
           </div>
         </Section>
 
-        <Section title="Toutes les catégories">
+        <Section title="All Categories">
           <div className="flex mt-2 space-x-2 overflow-x-auto">
-            <img src="https://placehold.co/100x100" alt="Category" className="rounded-lg" />
-            <img src="https://placehold.co/100x100" alt="Category" className="rounded-lg" />
-            <img src="https://placehold.co/100x100" alt="Category" className="rounded-lg" />
-            <img src="https://placehold.co/100x100" alt="Category" className="rounded-lg" />
-            <img src="https://placehold.co/100x100" alt="Category" className="rounded-lg" />
+           <AllCategoriesCard />
           </div>
         </Section>
 
-        <Section title="Obtenez jusqu'à 70% de réduction !">
+        <Section title="Up to 70% Discount">
           <div className={gridClass}>
-            <ImageCard src="https://placehold.co/160x160" alt="Discount" />
-            <ImageCard src="https://placehold.co/160x160" alt="Discount" />
-            <ImageCard src="https://placehold.co/160x160" alt="Discount" />
-          </div>
+            <DiscountCard />
+            </div>
         </Section>
 
-        <Section title="Mes intérêts">
+        <Section title="My Interests">
           <div className={gridClass}>
-            <ImageCard src="https://placehold.co/160x160" alt="Interest" />
-            <ImageCard src="https://placehold.co/160x160" alt="Interest" />
-            <ImageCard src="https://placehold.co/160x160" alt="Interest" />
+            <BestDealsCard />
           </div>
         </Section>
       <Navbar />

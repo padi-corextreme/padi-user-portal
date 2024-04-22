@@ -1,50 +1,42 @@
 
 import './App.css';
-import Wishlist from './pages/home/wishlistPage/wishlistPage';
-import Store from './sections/homesections/store';
 
-// import InterestCategory from './sections/InterestCategory';
-// import OnboardingPage from './sections/Onboarding';
-// import SignUpPage from './sections/SignUpPage';
-// import SplashScreen from './sections/SplashScreen';
-// import AllCategoriesCard from './sections/homesections/AllCategories';
-// import BestDealsCard from './sections/homesections/BestDeal';
-// import DiscountCard from './sections/homesections/Discount';
 
-// import LoginPage from './sections/loginPage';
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import InterestOptionPage from './sections/InterestOptions';
-// import OnboardingPage from './sections/Onboarding';
-// import SignUpPage from './sections/SignUpPage';
-// import LoginPage from './sections/loginPage';
-// import SplashScreen from './sections/SplashScreen';
 
-// const router = createBrowserRouter([
-//   { path: "/", element: <SplashScreen /> },
-//   { path: "/signup", element: <SignUpPage/> },
-//   { path: "/login", element: <LoginPage /> },
-//   { path: "/onboarding", element: <OnboardingPage/> },
-//   { path: "/interestoptions", element: <InterestOptionPage/> },
-// ]);
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import InterestOptionPage from './sections/InterestOptions';
+import OnboardingPage from './sections/Onboarding';
+import SignUpPage from './sections/SignUpPage';
+import LoginPage from './sections/loginPage';
+import SplashScreen from './sections/SplashScreen';
+import HomePage from './pages/home/HomePage';
+import ProfilePage from './pages/profile/profile';
+
+const router = createBrowserRouter([
+  { path: "/", element: <SplashScreen /> },
+  { path: "/signup", element: <SignUpPage/> },
+  { path: "/login", element: <LoginPage /> },
+  { path: "/onboarding", element: <OnboardingPage/> },
+  { path: "/interestoptions", element: <InterestOptionPage/> },
+  { path: "/Home", element: <HomePage /> },
+  { path: "/profile", element: <ProfilePage /> }
+
+
+]);
 
 
 
 function App() {
 
   return (
-  <>
-  <Store/>
-  <Wishlist/>
-  </>
-  //  <>
-  //  <SplashScreen />
-  //  <OnboardingPage/>
-  //  <SignUpPage />
-  //  <LoginPage />
-  //  <InterestCategory />
-  //  <AllCategoriesCard />
-  //  <BestDealsCard />
-  //  <DiscountCard 
+
+   <>
+<RouterProvider
+router={router}
+/>
+   
+  
+
   
   
   );
