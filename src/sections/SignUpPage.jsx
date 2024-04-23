@@ -1,9 +1,10 @@
 import React from "react";
 import { toast, Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     // Prevent default form submit behavior
@@ -32,6 +33,7 @@ const SignUpPage = () => {
         toast.error(data.error);
       } else {
         toast.success("Sign up success");
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
