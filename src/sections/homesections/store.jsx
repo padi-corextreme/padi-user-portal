@@ -3,12 +3,6 @@ import logo from '../../assets/images/Carrefour-logo.png';
 import imagee from '../../assets/images/headphones.png';
 
 
-
-
-
-
-
-
 const Store = () => {
   return (
     <div className="card">

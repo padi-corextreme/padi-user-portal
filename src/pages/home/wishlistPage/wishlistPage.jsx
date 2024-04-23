@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import BestDealsCard from '../../../sections/homesections/BestDeal';
 
-const Wishlist = () => {
+const WishlistPage = () => {
   const firstCardRef = useRef(null);
 
   useEffect(() => {
@@ -68,7 +69,8 @@ const Wishlist = () => {
         </button>
       </div>
     </div>
+    
   );
 };
 
-export default Wishlist;
+export default WishlistPage;

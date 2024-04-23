@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/navbar';
 import AllCategoriesCard from '../../sections/homesections/AllCategories';
 import BestDealsCard from '../../sections/homesections/BestDeal';
 import DiscountCard from '../../sections/homesections/Discount';
+import Store from '../../sections/homesections/store';
 
 // Shared Tailwind CSS class strings
 const titleClass = 'text-lg font-semibold text-zinc-700 dark:text-zinc-300';
@@ -32,13 +33,7 @@ const HomePage = () => {
         </h1>
         
         <Section title="Point of Sale">
-          <div className="flex mt-2 space-x-2 overflow-x-auto">
-            <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
-            <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
-            <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
-            <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
-            <img src="https://placehold.co/80x80" alt="Store" className="rounded-lg" />
-          </div>
+          <Store />
         </Section>
 
         <Section title="Best deals">
