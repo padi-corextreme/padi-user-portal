@@ -17,9 +17,10 @@ const BestDealsCard = ({product}) => {
   
 
     return (
-        <div className={cardClasses}>
-            <div className="relative">
-                <img className="rounded-t-lg p-8" src={product.image} alt="product img" />
+            <div className='mb-80 ' >
+        <div className={cardClasses}  >
+            <div className="relative ">
+                <img className="rounded-t-lg p-8" src={Cornflakes} alt="product img" />
                 <button
                     className={`absolute top-0 right-0 mt-4 mr-4 bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 ${buttonClasses} ${darkButtonClasses}`}
                     onClick={toggleLike}
@@ -53,6 +54,7 @@ const BestDealsCard = ({product}) => {
                     <button className={`text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}>Voir les détails</button>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

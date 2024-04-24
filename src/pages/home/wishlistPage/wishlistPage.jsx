@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import BestDealsCard from '../../../sections/homesections/BestDeal';
+import Navbar from '../../../components/navbar/navbar';
 
 const WishlistPage = () => {
   const firstCardRef = useRef(null);
@@ -68,6 +69,8 @@ const WishlistPage = () => {
           <span className="text-lg mr-2">+</span> Ajouter un nouvel article
         </button>
       </div>
+      <BestDealsCard/>
+      <Navbar/>
     </div>
     
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../../components/navbar/navbar';
 
 
 const interestClasses = "group relative flex-none w-64 rounded-lg shadow-md";
@@ -45,6 +46,7 @@ const InterestPage = () => {
           </div>
         </div>
       ))}
+      <Navbar/>
     </div>
     
   

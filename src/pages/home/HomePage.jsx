@@ -64,8 +64,10 @@ const HomePage = () => {
           </div>
         </Section>
 
-        <Section title="My Interests">
-          <div className={gridClass}>{/* <BestDealsCard /> */}</div>
+        <Section title="My Interests " className=''>
+          <div className={gridClass} >
+            <BestDealsCard />
+          </div>
         </Section>
         <Navbar />
       </div>
