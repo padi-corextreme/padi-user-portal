@@ -54,8 +54,8 @@ const HomePage = () => {
             </div>
         </Section>
 
-        <Section title="My Interests">
-          <div className={gridClass}>
+        <Section title="My Interests " className=''>
+          <div className={gridClass} >
             <BestDealsCard />
           </div>
         </Section>
