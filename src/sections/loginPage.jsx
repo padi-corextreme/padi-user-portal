@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-
+const navigate = useNavigate()
   const handleSubmit = async (event) => {
     // Prevent default form submit behavior
     event.preventDefault();
@@ -28,6 +29,7 @@ const LoginPage = () => {
         toast.error(data.error);
       } else {
         toast.success("Login was successful");
+navigate('/home')
       }
     } catch (error) {
       console.log(error);

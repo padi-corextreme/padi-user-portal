@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const interestClasses = "group relative flex-none w-64 rounded-lg shadow-md";
 const buttonClasses = "absolute bottom-4 left-4 bg-white dark:bg-zinc-700 p-2 rounded-full shadow-lg";
@@ -6,6 +8,7 @@ const tagClasses = "absolute bottom-4 right-4 bg-white dark:bg-zinc-700 py-2 px-
 const textClasses = "text-sm text-zinc-800 dark:text-zinc-200";
 
 const InterestsCategory = () => {
+  const navigate = useNavigate()
   const categories = [
     { name: 'Electronics' },
     { name: 'Clothes' },
@@ -19,13 +22,14 @@ const InterestsCategory = () => {
     const updatedInterests = [...selectedInterests];
     updatedInterests[index] = !updatedInterests[index];
     setSelectedInterests(updatedInterests);
+
   };
 
   return (
     <div className="bg-white dark:bg-zinc-800 p-4">
       <div className="flex justify-between items-center mb-6">
         <div className="text-zinc-600 dark:text-zinc-300">Page 2 of 3</div>
-        <button className="text-blue-600 dark:text-blue-400">Quit</button>
+        <button className="text-blue-600 dark:text-blue-400"onClick={()=>navigate("/")}>Quit</button>
       </div>
       <h2 className="text-2xl font-semibold text-center mb-6">Select categories of interest.</h2>
       <div className="flex flex-row overflow-x-auto space-x-4">
@@ -46,8 +50,8 @@ const InterestsCategory = () => {
         ))}
       </div>
       <div className="flex justify-between items-center mt-6">
-        <button className="text-blue-600 dark:text-blue-400">Back</button>
-        <button className="bg-blue-600 text-white py-2 px-6 rounded-lg">Continue</button>
+        <button className="text-blue-600 dark:text-blue-400"onClick={()=>navigate("/login")}>Back</button>
+        <button className="bg-blue-600 text-white py-2 px-6 rounded-lg"onClick={()=>navigate("/interestoptions")}>Continue</button>
       </div>
     </div>
   );

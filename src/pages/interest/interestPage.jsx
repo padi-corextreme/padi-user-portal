@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
+
 const interestClasses = "group relative flex-none w-64 rounded-lg shadow-md";
 const buttonClasses = "absolute bottom-4 left-4 bg-white dark:bg-zinc-700 p-2 rounded-full shadow-lg";
 const tagClasses = "absolute bottom-4 right-4 bg-white dark:bg-zinc-700 py-2 px-4 rounded-lg shadow-md";
 const textClasses = "text-sm text-zinc-800 dark:text-zinc-200";
 
+
 const InterestPage = () => {
+
+
   const categories = [
     { name: 'Electronics' },
     { name: 'Clothes' },

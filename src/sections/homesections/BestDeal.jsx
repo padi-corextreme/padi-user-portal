@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import Cornflakes from "../../assets/images/Corn Flakes Milk Chocolat 1.png"
 import Storelogo from "../../assets/images/Logo Carrefour Market 1.png"
 
+
 const cardClasses = "max-w-sm bg-white rounded-lg shadow-md dark:bg-zinc-800 dark:border-zinc-700";
 const buttonClasses = "text-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center";
 const darkButtonClasses = "dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800";
 
-const BestDealsCard = () => {
+const BestDealsCard = ({product}) => {
     const [liked, setLiked] = useState(false);
 
     const toggleLike = () => {
         setLiked(!liked);
     };
 
+  
+
     return (
         <div className={cardClasses}>
             <div className="relative">
-                <img className="rounded-t-lg p-8" src={Cornflakes} alt="product img" />
+                <img className="rounded-t-lg p-8" src={product.image} alt="product img" />
                 <button
                     className={`absolute top-0 right-0 mt-4 mr-4 bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 ${buttonClasses} ${darkButtonClasses}`}
                     onClick={toggleLike}
@@ -38,15 +41,15 @@ const BestDealsCard = () => {
                 </button>
             </div>
             <div className="px-5 pb-5">
-                <h5 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Céréales au chocolat</h5>
+                <h5 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">{product.name}</h5>
                 <div className="text-zinc-500 dark:text-zinc-400 text-sm mb-2 mt-1">Pulvinar sed morbi tempor ullamcorper id nisl. In arcu nulla duis cras id.</div>
                 <div className="flex items-center mt-2.5 mb-5">
                     <span className="text-3xl font-bold text-zinc-900 dark:text-white">13 000 FCFA</span>
-                    <span className="text-base font-semibold line-through text-zinc-500 dark:text-zinc-400 ml-2">13 000 FCFA</span>
-                    <span className="ml-2 text-xl font-semibold text-red-500 bg-red-100 rounded-full px-2.5 py-0.5">54%</span>
+                    <span className="text-base font-semibold line-through text-zinc-500 dark:text-zinc-400 ml-2">{product.price}</span>
+                    <span className="ml-2 text-xl font-semibold text-red-500 bg-red-100 rounded-full px-2.5 py-0.5">{product.discount}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                    <img className="h-6" src={Storelogo} alt="store logo" />
+                    <img className="h-6" src={product.logo} alt="store logo" />
                     <button className={`text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}>Voir les détails</button>
                 </div>
             </div>
