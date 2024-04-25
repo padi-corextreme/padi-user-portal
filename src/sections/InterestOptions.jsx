@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const InterestOptionPage = () => {
   const [categories, setCategories] = useState([
@@ -14,9 +16,9 @@ const InterestOptionPage = () => {
         "Shorts",
         "Blouses",
         "Suits",
-        "Coats"
+        "Coats",
       ],
-      showMore: false
+      showMore: false,
     },
     {
       name: "Mobile",
@@ -30,9 +32,9 @@ const InterestOptionPage = () => {
         "LG",
         "Motorola",
         "Sony Xperia",
-        "Nokia"
+        "Nokia",
       ],
-      showMore: false
+      showMore: false,
     },
     {
       name: "Electronics",
@@ -46,9 +48,9 @@ const InterestOptionPage = () => {
         "Gaming Console",
         "Speaker",
         "Router",
-        "Printer"
+        "Printer",
       ],
-      showMore: false
+      showMore: false,
     },
     {
       name: "Shoes",
@@ -62,11 +64,15 @@ const InterestOptionPage = () => {
         "Loafers",
         "Slippers",
         "Espadrilles",
-        "Wedges"
+        "Wedges",
       ],
-      showMore: false
-    }
+      showMore: false,
+    },
   ]);
+
+  // const userId = localStorage.getItem("info");
+
+  const navigate = useNavigate();
 
   const toggleShowMore = (index) => {
     const updatedCategories = [...categories];
@@ -74,42 +80,61 @@ const InterestOptionPage = () => {
     setCategories(updatedCategories);
   };
 
+  
+
+
   return (
     <>
-<h2 className="text-2xl font-semibold text-center mb-6">Let's be more specific!</h2>
+      <h2 className="text-2xl font-semibold text-center mb-6">
+        Let's be more specific!
+      </h2>
       <div className="flex flex-row overflow-x-auto space-x-4"></div>
-      <h4 className="text-2xl font-semibold text-center mb-6">We have some recommended options for your chosen interests</h4>
+      <h4 className="text-2xl font-semibold text-center mb-6">
+        We have some recommended options for your chosen interests
+      </h4>
       <div className="flex flex-row overflow-x-auto space-x-4"></div>
 
-<div className="container mx-auto p-4">
-      {categories.map((category, index) => (
-        <div key={index} className="mb-6">
-          <h2 className="text-lg font-semibold mb-2">{category.name}</h2>
-          {category.items.slice(0, category.showMore ? category.items.length : 4).map((item, i) => (
-            <div key={i} className="flex items-center mb-2">
-              <label htmlFor={`${category.name}-${i}`} className="mr-2">{item}</label>
-              <input type="checkbox" className="ml-auto" id={`${category.name}-${i}`} />
-            </div>
-          ))}
-          {category.items.length > 4 && (
-            <button
-              onClick={() => toggleShowMore(index)}
-              className="text-blue-500 hover:underline focus:outline-none"
-            >
-              {category.showMore ? "Show Less" : "Show More"}
-            </button>
-          )}
+      <div className="container mx-auto p-4">
+        {categories.map((category, index) => (
+          <div key={index} className="mb-6">
+            <h2 className="text-lg font-semibold mb-2">{category.name}</h2>
+            {category.items
+              .slice(0, category.showMore ? category.items.length : 4)
+              .map((item, i) => (
+                <div key={i} className="flex items-center mb-2">
+                  <label htmlFor={`${category.name}-${i}`} className="mr-2">
+                    {item}
+                  </label>
+                  <input
+                    type="checkbox"
+                    className="ml-auto"
+                    id={`${category.name}-${i}`}
+                  />
+                </div>
+              ))}
+            {category.items.length > 4 && (
+              <button
+                onClick={() => toggleShowMore(index)}
+                className="text-blue-500 hover:underline focus:outline-none"
+              >
+                {category.showMore ? "Show Less" : "Show More"}
+              </button>
+            )}
+          </div>
+        ))}
+        <div className="flex justify-between">
+          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Back
+          </button>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => navigate("/Home")}
+          >
+            Continue
+          </button>
         </div>
-      ))}
-      <div className="flex justify-between">
-        <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-          Back
-        </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Continue
-        </button>
       </div>
-    </div>
     </>
   );
 };

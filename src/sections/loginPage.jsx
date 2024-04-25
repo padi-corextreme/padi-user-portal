@@ -25,12 +25,15 @@ const LoginPage = () => {
           },
         }
       );
+      const info = await response.json();
+      localStorage.setItem("info", info.user._id);
+
       if (response.status !== 200) {
         const data = await response.json();
         toast.error(data.error);
       } else {
         toast.success("Login was successful");
-        navigate("/interestoptions");
+        navigate("/Home");
       }
     } catch (error) {
       console.log(error);

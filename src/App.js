@@ -11,12 +11,14 @@ import ProfilePage from "./pages/profile/profile";
 import WishlistPage from "./pages/home/wishlistPage/wishlistPage";
 import InterestPage from "./pages/interest/interestPage";
 import { Toaster } from "react-hot-toast";
+import InterestsCategory from "./sections/InterestCategory";
 
 const router = createBrowserRouter([
   { path: "/", element: <SplashScreen /> },
   { path: "/signup", element: <SignUpPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/onboarding", element: <OnboardingPage /> },
+  { path: "/interestcategory", element: <InterestsCategory /> },
   { path: "/interestoptions", element: <InterestOptionPage /> },
   { path: "/Home", element: <HomePage /> },
   { path: "/profile", element: <ProfilePage /> },
