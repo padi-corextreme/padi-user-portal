@@ -13,7 +13,7 @@ const useQueryProducts = async () => {
       const result = await response.json();
       setProducts(result);
       allProducts = result;
-      console.log(result);
+      // console.log(result);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const useQueryProducts = async () => {
   };
 
   useEffect(() => {
-    // getProducts();
+    getProducts();
   }, []);
 
   return {

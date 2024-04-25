@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/navbar/navbar";
 import AllCategoriesCard from "../../sections/homesections/AllCategories";
 import BestDealsCard from "../../sections/homesections/BestDeal";
@@ -22,9 +22,29 @@ const Section = ({ title, children }) => (
 const HomePage = () => {
   // Assuming username might be dynamic in a real-world scenario
   
-  const { allProduct} = useQueryProducts();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getProducts = async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+      const result = await response.json();
+      setProducts(result);
+      console.log(result);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   
-  console.log(allProduct)
+ 
 
   
   const username = "Julie";
@@ -40,7 +60,7 @@ const HomePage = () => {
         </Section>
 
         <Section title="Best deals">
-          {/* {loading ? (
+          {loading ? (
             <p>Loading</p>
           ) : (
             <div className={gridClass}>
@@ -49,7 +69,7 @@ const HomePage = () => {
                   <BestDealsCard key={product._id} product={product} />
                 ))}
             </div>
-          )} */}
+          )} 
         </Section>
 
         <Section title="All Categories">

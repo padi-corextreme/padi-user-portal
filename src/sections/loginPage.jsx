@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -18,19 +18,24 @@ const LoginPage = () => {
           method: "POST",
           body: JSON.stringify({
             email: formData.get("email"),
-            telephone: formData.get("telephone"),
+            password: formData.get("password"),
           }),
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
+      const info = await response.json();
+      localStorage.setItem("userId", info.user._id);
+      localStorage.setItem("userName", info.user.name);
+      localStorage.setItem("userEmail", info.user.email);
+
       if (response.status !== 200) {
         const data = await response.json();
         toast.error(data.error);
       } else {
         toast.success("Login was successful");
-        navigate("/interestoptions");
+        navigate("/interestcategory");
       }
     } catch (error) {
       console.log(error);
@@ -53,10 +58,10 @@ const LoginPage = () => {
             />
           </div>
           <div>
-            <label className="block mb-1">Telephone</label>
+            <label className="block mb-1">Password</label>
             <input
-              type="tel"
-              name="telephone"
+              type="password"
+              name="password"
               className="w-full border rounded-md p-2"
               required
             />

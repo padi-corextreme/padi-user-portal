@@ -11,7 +11,8 @@ import ProfilePage from "./pages/profile/profile";
 import WishlistPage from "./pages/home/wishlistPage/wishlistPage";
 import InterestPage from "./pages/interest/interestPage";
 import { Toaster } from "react-hot-toast";
-import HomePage from "./pages/home/Homepage";
+import HomePage from "./pages/home/HomePage";
+import InterestsCategory from "./sections/InterestCategory";
 
 const router = createBrowserRouter([
   { path: "/", element: <SplashScreen /> },
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
   { path: "/onboarding", element: <OnboardingPage /> },
   { path: "/interestoptions", element: <InterestOptionPage /> },
+  { path: "/interestcategory", element: <InterestsCategory /> },
   { path: "/home", element: <HomePage /> },
   { path: "/profile", element: <ProfilePage /> },
   { path: "/wishlist", element: <WishlistPage /> },

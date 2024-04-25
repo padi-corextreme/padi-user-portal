@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cornflakes from "../../assets/images/Corn Flakes Milk Chocolat 1.png"
 import Storelogo from "../../assets/images/Logo Carrefour Market 1.png"
 
@@ -10,10 +10,15 @@ const darkButtonClasses = "dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring
 const BestDealsCard = ({product}) => {
     const [liked, setLiked] = useState(false);
 
+    console.log(product)
     const toggleLike = () => {
         setLiked(!liked);
     };
 
+
+    if(!product){
+      return <div>Loading.....</div>
+    }
   
 
     return (
@@ -43,7 +48,7 @@ const BestDealsCard = ({product}) => {
             </div>
             <div className="px-5 pb-5">
                 <h5 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">{product.name}</h5>
-                <div className="text-zinc-500 dark:text-zinc-400 text-sm mb-2 mt-1">Pulvinar sed morbi tempor ullamcorper id nisl. In arcu nulla duis cras id.</div>
+                <div className="text-zinc-500 dark:text-zinc-400 text-sm mb-2 mt-1">{product.description}</div>
                 <div className="flex items-center mt-2.5 mb-5">
                     <span className="text-3xl font-bold text-zinc-900 dark:text-white">13 000 FCFA</span>
                     <span className="text-base font-semibold line-through text-zinc-500 dark:text-zinc-400 ml-2">{product.price}</span>

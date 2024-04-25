@@ -21,7 +21,7 @@ const SignUpPage = () => {
             name: formData.get("name"),
             telephone: formData.get("telephone"),
             email: formData.get("email"),
-            // password: formData.get('password')
+            password: formData.get('password')
           }),
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const SignUpPage = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-          {/* <div className="mb-4">
+          <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Password
             </label>
@@ -89,7 +89,7 @@ const SignUpPage = () => {
               placeholder="Enter your email"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
-          </div> */}
+          </div>
           <button
             type="submit"
             className="w-full bg-orange-500 text-white font-bold py-2 px-4 rounded"

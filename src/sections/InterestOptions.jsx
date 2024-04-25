@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const InterestOptionPage = () => {
+  const navigate = useNavigate()
   const [categories, setCategories] = useState([
     {
       name: "Clothes",
@@ -105,7 +107,7 @@ const InterestOptionPage = () => {
         <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
           Back
         </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/home')}>
           Continue
         </button>
       </div>
