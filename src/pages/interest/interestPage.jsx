@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/navbar/navbar';
+import image1 from "../../assets/images/medium-shot-woman-antique-store 1.png"
+import image2 from '../../assets/images/woman-walks-outside-with-paper-shopping-bags-messages-via-smartphone-glad-recieve-feedback-her-comment-happy-make-successful-purchases-leisure-time 1.png'
+import image3 from "../../assets/images/portrait-african-american-man-pleased-with-his-shoe-choice-happy-dark-haired-man-holding-new-shoe-boutique-showing-it-camera-laughing-buying-menswear-clothes-business-concept 2.png"
+import image4 from "../../assets/images/elegant-smartphone-composition-removebg-preview.png"
+import image5 from "../../assets/images/arrangement-with-sanitary-products 1.png"
+import image6 from "../../assets/images/high-angle-cosmetic-containers-arrangement 1.png"
 
 
 const interestClasses = "group relative flex-none w-64 rounded-lg shadow-md";
@@ -9,13 +15,16 @@ const textClasses = "text-sm text-zinc-800 dark:text-zinc-200";
 
 
 const InterestPage = () => {
-
+  
 
   const categories = [
-    { name: 'Electronics' },
-    { name: 'Clothes' },
-    { name: 'Shoes' },
-    { name: 'Mobile' }
+    { name: 'Electronics', picture :image2 },
+    { name: 'Clothes', picture :image1},
+    { name: 'Shoes' ,picture :image3},
+    { name: 'Mobile',picture :image4 },
+    { name: 'Hygiene' ,picture :image5},
+    { name: 'Cosmetics',picture :image6 }
+    
   ];
 
   const [selectedInterests, setSelectedInterests] = useState(Array(categories.length).fill(false));
@@ -33,7 +42,7 @@ const InterestPage = () => {
     <div className="flex flex-row overflow-x-auto space-x-4">
       {categories.map((category, index) => (
         <div key={index} className={interestClasses}>
-          <img src={`https://placehold.co/300x400?text=${category.name}`} alt={category.name} />
+          <img key={index} src={category.picture} alt={`Img ${index + 1}`} />
           <button className={buttonClasses} onClick={() => toggleInterest(index)}>
             {selectedInterests[index] ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 text-green-500">

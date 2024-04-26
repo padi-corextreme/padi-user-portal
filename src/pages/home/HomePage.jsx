@@ -4,12 +4,12 @@ import AllCategoriesCard from "../../sections/homesections/AllCategories";
 import BestDealsCard from "../../sections/homesections/BestDeal";
 import DiscountCard from "../../sections/homesections/Discount";
 import Store from "../../sections/homesections/store";
-import useQueryProducts from "../../hooks/useQueryProducts";
+
 
 
 // Shared Tailwind CSS class strings
 const titleClass = "text-lg font-semibold text-zinc-700 dark:text-zinc-300";
-const gridClass = "flex grid-cols-2 gap-4 mt-2";
+const gridClass = "grid grid-cols-4 gap-4 mt-2";
 
 const Section = ({ title, children }) => (
   <div className="mt-4">
@@ -22,6 +22,8 @@ const Section = ({ title, children }) => (
 const HomePage = () => {
   // Assuming username might be dynamic in a real-world scenario
   
+const username = localStorage.getItem('userName');
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -47,7 +49,7 @@ const HomePage = () => {
  
 
   
-  const username = "Julie";
+  
   return (
     <body className="bg-zinc-100 dark:bg-zinc-800">
       <div className="container mx-auto px-4">
@@ -66,7 +68,9 @@ const HomePage = () => {
             <div className={gridClass}>
               {products &&
                 products.map((product) => (
+                  <div className="">
                   <BestDealsCard key={product._id} product={product} />
+                  </div>
                 ))}
             </div>
           )} 
