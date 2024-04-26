@@ -1,57 +1,85 @@
-import React, { useState } from 'react';
-import Cornflakes from "../../assets/images/Corn Flakes Milk Chocolat 1.png"
-import Storelogo from "../../assets/images/Logo Carrefour Market 1.png"
+import React, { useState } from "react";
+import Cornflakes from "../../assets/images/Corn Flakes Milk Chocolat 1.png";
+import Storelogo from "../../assets/images/Logo Carrefour Market 1.png";
 
-const cardClasses = "max-w-sm bg-white rounded-lg shadow-md dark:bg-zinc-800 dark:border-zinc-700";
-const buttonClasses = "text-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center";
-const darkButtonClasses = "dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800";
+const cardClasses =
+  "max-w-sm bg-white rounded-lg shadow-md dark:bg-zinc-800 dark:border-zinc-700";
+const buttonClasses =
+  "text-white font-medium rounded-full text-sm p-2.5 text-center flex  ";
+const darkButtonClasses =
+  "dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800";
 
-const BestDealsCard = () => {
-    const [liked, setLiked] = useState(false);
+const BestDealsCard = ({ product }) => {
+  const [liked, setLiked] = useState(false);
 
-    const toggleLike = () => {
-        setLiked(!liked);
-    };
+  const toggleLike = () => {
+    setLiked(!liked);
+  };
 
-    return (
-        <div className={cardClasses}>
-            <div className="relative">
-                <img className="rounded-t-lg p-8" src={Cornflakes} alt="product img" />
-                <button
-                    className={`absolute top-0 right-0 mt-4 mr-4 bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 ${buttonClasses} ${darkButtonClasses}`}
-                    onClick={toggleLike}
-                >
-                    <svg
-                        className={`w-4 h-4 ${liked ? 'text-red-500' : 'text-white'}`}
-                        fill="currentcolor"
-                        viewBox="0 0 471.701 471.701"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1
-		c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3
-		l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4
-		C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3
-		s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4
-		c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3
-		C444.801,187.101,434.001,213.101,414.401,232.701z"></path>
-                    </svg>
-                </button>
-            </div>
-            <div className="px-5 pb-5">
-                <h5 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Céréales au chocolat</h5>
-                <div className="text-zinc-500 dark:text-zinc-400 text-sm mb-2 mt-1">Pulvinar sed morbi tempor ullamcorper id nisl. In arcu nulla duis cras id.</div>
-                <div className="flex items-center mt-2.5 mb-5">
-                    <span className="text-3xl font-bold text-zinc-900 dark:text-white">13 000 FCFA</span>
-                    <span className="text-base font-semibold line-through text-zinc-500 dark:text-zinc-400 ml-2">13 000 FCFA</span>
-                    <span className="ml-2 text-xl font-semibold text-red-500 bg-red-100 rounded-full px-2.5 py-0.5">54%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                    <img className="h-6" src={Storelogo} alt="store logo" />
-                    <button className={`text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}>Voir les détails</button>
-                </div>
-            </div>
+  // Handle case when product data is not available yet
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  // Destructure product data
+  const { name, description, price, discount } = product;
+
+  return (
+    <div className={cardClasses}>
+      <div className="relative">
+        <img
+          className="rounded-t-lg w-full h-40 object-cover"
+          src={Cornflakes}
+          alt="product img"
+        />
+        <button
+          className={`absolute top-0 right-0 mt-2 mr-2 bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 ${buttonClasses} ${darkButtonClasses}`}
+          onClick={toggleLike}
+        >
+          <svg
+            className={`w-4 h-4 ${liked ? "text-red-500" : "text-white"}`}
+            fill="currentcolor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+          </svg>
+        </button>
+      </div>
+      <div className="px-4 py-2">
+        <h5 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+          {name}
+        </h5>
+        <div className="text-zinc-500 dark:text-zinc-400 text-sm mb-2 mt-1">
+          {description}
         </div>
-    );
+        <div className="justify-between items-center">
+          <div className="flex items-center py-2">
+            <span className="text-3xl font-bold text-zinc-900 dark:text-white">
+              {price}
+            </span>
+            <span className="text-base font-semibold line-through text-zinc-500 dark:text-zinc-400 ml-2">
+              {discount}
+            </span>
+
+            <div className=" items-center">
+            <img className="h-6 mr-2" src={Storelogo} alt="store logo" />
+           
+          </div>
+          </div>
+         
+
+          <button
+              className={`text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2  ${darkButtonClasses}`}
+            >
+              See more details
+            </button>
+          
+        </div>
+      
+      </div>
+    </div>
+  );
 };
 
 export default BestDealsCard;
