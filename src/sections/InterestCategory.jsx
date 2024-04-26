@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import image1 from "../assets/images/medium-shot-woman-antique-store 1.png"
+import image2 from '../assets/images/woman-walks-outside-with-paper-shopping-bags-messages-via-smartphone-glad-recieve-feedback-her-comment-happy-make-successful-purchases-leisure-time 1.png'
+import image3 from "../assets/images/portrait-african-american-man-pleased-with-his-shoe-choice-happy-dark-haired-man-holding-new-shoe-boutique-showing-it-camera-laughing-buying-menswear-clothes-business-concept 2.png"
+import image4 from "../assets/images/elegant-smartphone-composition-removebg-preview.png"
+import image5 from "../assets/images/arrangement-with-sanitary-products 1.png"
+import image6 from "../assets/images/high-angle-cosmetic-containers-arrangement 1.png"
 
 const interestClasses = "group relative flex-none w-64 rounded-lg shadow-md";
 const buttonClasses =
@@ -14,11 +20,13 @@ const InterestsCategory = () => {
 
   const navigate = useNavigate();
   const categories = [
-    { name: "Electronics" },
-    { name: "Clothes" },
-    { name: "Shoes" },
-    { name: "Mobile" },
-    { name: "Automobiles" },
+    { name: 'Electronics', picture :image2 },
+    { name: 'Clothes', picture :image1},
+    { name: 'Shoes' ,picture :image3},
+    { name: 'Mobile',picture :image4 },
+    { name: 'Hygiene' ,picture :image5},
+    { name: 'Cosmetics',picture :image6 }
+    
   ];
 
   const [selectedInterests, setSelectedInterests] = useState([]);
@@ -38,13 +46,16 @@ const InterestsCategory = () => {
         `${process.env.REACT_APP_API_URL}/interests/${userId}`,
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify({
             category: selectedInterests,
           }),
         }
       );
       console.log(await response.json());
-      if (response.status == 201) {
+      if (response.status === 201) {
         toast.success("Interest was added successfully");
         navigate("/interestoptions");
       } else {
@@ -72,10 +83,7 @@ const InterestsCategory = () => {
       <div className="flex flex-row overflow-x-auto space-x-4">
         {categories.map((category, index) => (
           <div key={index} className={interestClasses}>
-            <img
-              src={`https://placehold.co/300x400?text=${category.name}`}
-              alt={category.name}
-            />
+            <img key={index} src={category.picture} alt={`Image ${index + 1}`} />
             <button
               className={buttonClasses}
               onClick={() => selectInterests(category.name)}
