@@ -6,9 +6,7 @@ import Hygiene from "../../assets/images/arrangement-with-sanitary-products 1.pn
 import Cosmetics from "../../assets/images/high-angle-cosmetic-containers-arrangement 1.png"
 import Clothes from "../../assets/images/still-life-say-no-fast-fashion (1) 1.png"
 
-
-
-const cardContainerClasses = "grid grid-cols-6 gap-6";
+const cardContainerClasses = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6";
 const itemContainerClasses = "max-w-sm rounded overflow-hidden shadow-lg";
 const imageClasses = "w-full";
 const contentClasses = "px-6 py-4";
