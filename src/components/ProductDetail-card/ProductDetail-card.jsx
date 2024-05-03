@@ -2,6 +2,7 @@ import React from 'react';
 
 
 
+
 const BUTTON_CLASS = "text-zinc-600 dark:text-zinc-400";
 const TEXT_CLASS = "text-zinc-800 dark:text-white";
 const BG_CLASS = "bg-zinc-200 dark:bg-zinc-700";
