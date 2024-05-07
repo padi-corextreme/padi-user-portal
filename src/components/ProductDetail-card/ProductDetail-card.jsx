@@ -24,7 +24,7 @@ const ProductCard = () => {
         </button>
       </div>
 
-      <img className="w-full" src={image} alt="Product Image" />
+      <img className="w-full" src={image} alt="Product Img" />
 
       <div className="px-4 py-4">
         <h2 className={`font-bold text-xl mb-2 ${TEXT_CLASS}`}>HP Elite Book</h2>
